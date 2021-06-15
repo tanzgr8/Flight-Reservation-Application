@@ -7,10 +7,12 @@ import User from './Components/User';
 import Admin from './Components/Admin';
 import store from './store';
 import { Provider } from 'react-redux';
+import Nav from './Nav';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 ReactDOM.render(
 <BrowserRouter>
 <Provider store={store}>
+  <Nav/>
 <Switch>
   <Route exact path ="/"><App/></Route>
   <Route exact path ="/userLogin"><UserLogin/></Route>
