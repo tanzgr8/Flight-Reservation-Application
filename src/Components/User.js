@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Add } from "../Redux/Action/index";
+import { useDispatch } from "react-redux";
 import "./user.css";
 function User() {
   const [name, setName] = useState("");
@@ -7,9 +9,11 @@ function User() {
   const [from, setFrom] = useState("");
   const [time, setTime] = useState("12:30 - 2:30");
   const [book, setbook] = useState(false);
+  const dispatch= useDispatch();
   function handleSubmit(e) {
     e.preventDefault();
     setbook(true);
+    dispatch(Add(name,date,to,from,time));
     Array.from(document.querySelectorAll("input")).forEach(
       (input) => (input.value = "")
     );
@@ -20,6 +24,7 @@ function User() {
     setDate("");
     setTo("");
     setFrom("");
+    setTime("12:30 - 2:30")
   };
   function Reciept() {
     if (book) {
