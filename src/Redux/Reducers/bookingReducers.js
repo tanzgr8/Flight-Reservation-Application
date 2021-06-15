@@ -25,22 +25,7 @@ const bookingReducers =(state=initial,action)=>{
                   ...state,
                   list: newlist,
                 };
-            case "EDIT":
-                const {name1,date1,to1,from1,time1}= action.payload;
-                 return state.list.map((elem)=>{
-                    if(elem.id===action.id){
-                        return {
-                            id:action.id,
-                            name:name1,
-                            date:date1,
-                            to:to1,
-                            from:from1,
-                            time:time1
-                        };
-                    }
-                    return elem;
-                });
-                
+            
               default:
                 return state;
             }
