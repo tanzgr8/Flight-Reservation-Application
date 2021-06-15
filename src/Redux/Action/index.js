@@ -16,4 +16,17 @@ export const Delete = (id) => {
       type: "DELETE",
       id,
     };
+  }; 
+  export const Edit =(name,date,to ,from,time,id)=>{
+    return {
+      type:"EDIT",
+      id,
+    payload:{
+           name:name,
+           date:date,
+           to:to,
+           from:from,
+           time:time   
+    },
+  };
   };
