@@ -27,6 +27,7 @@ const bookingReducers =(state=initial,action)=>{
                 };
             case "EDIT":
                 const {name1,date1,to1,from1,time1}= action.payload;
+
                 return{
                     ...state,
                     list: state.list.map((elem)=>{
@@ -45,7 +46,7 @@ const bookingReducers =(state=initial,action)=>{
                     }),
 
                     
-                }
+                };
                  
                 
               default:
