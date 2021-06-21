@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Add } from "../Redux/Action/index";
 import { useDispatch } from "react-redux";
 import "./user.css";
+import { ToastContainer, toast } from "react-toastify";
 function User() {
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
@@ -9,14 +10,13 @@ function User() {
   const [from, setFrom] = useState("");
   const [time, setTime] = useState("12:30 - 2:30");
   const [book, setbook] = useState(false);
+  const [err,setErr]=useState("Name cannot be empty !!");
   const dispatch= useDispatch();
   function handleSubmit(e) {
     e.preventDefault();
-    setbook(true);
+    notify();
     dispatch(Add(name,date,to,from,time));
-    Array.from(document.querySelectorAll("input")).forEach(
-      (input) => (input.value = "")
-    );
+    
   }
   const print = () => {
     setbook(false);
@@ -26,6 +26,51 @@ function User() {
     setFrom("");
     setTime("12:30 - 2:30")
   };
+  const notify =()=>{
+ let er= checkDetails();
+ if(er==="false"){
+toast.error(err,{
+  position: "top-center",
+});
+ }
+else{
+  setbook(true);
+  setErr("");
+}
+ }
+ const checkDetails=()=>{
+  if(name===""){
+    setErr("");
+    setErr("Name Cannot be empty");
+    return "false";
+
+  } if(date===""){
+    setErr("");
+    setErr("Date Cannot be empty");
+    return "false";
+
+  } if(to===""){
+    setErr("");
+    setErr("Destination To Cannot be empty");
+    return "false";
+
+  } if(from===""){
+    setErr("");
+    setErr("Destination From  Cannot be empty");
+    return "false";
+
+  }
+   if(to===from){
+    setErr("");
+     setErr("Destination to and destination from cannot be same");
+     return "false";
+
+   }else{
+     setErr("");
+     return "true";
+   }
+ }
+  
   function Reciept() {
     if (book) {
       return (
@@ -141,6 +186,7 @@ function User() {
             </button>
           </form>
           {Reciept()}
+          <ToastContainer/>
         </div>
       </div>
     </>
