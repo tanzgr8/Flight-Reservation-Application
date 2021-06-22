@@ -19,16 +19,16 @@ export const Delete = (id) => {
       id,
     };
   }; 
-  export const Edit =(name,date,to ,from,time,id)=>{
+  export const Edit =(name1,date1,to1 ,from1,time1,id)=>{
     return {
       type:"EDIT",
       id,
     payload:{
-           name:name,
-           date:date,
-           to:to,
-           from:from,
-           time:time   
+           name1:name1,
+           date1:date1,
+           to1:to1,
+           from1:from1,
+           time1:time1   
     },
   };
   };
