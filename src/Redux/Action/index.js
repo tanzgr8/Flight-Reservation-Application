@@ -1,3 +1,5 @@
+
+
 export const Add= (name,date,to ,from,time)=>{
    return {
         type:"ADD",
@@ -17,4 +19,17 @@ export const Delete = (id) => {
       id,
     };
   }; 
-  
+  export const Edit =(name1,date1,to1 ,from1,time1,id)=>{
+    return {
+      type:"EDIT",
+      id,
+    payload:{
+           name1:name1,
+           date1:date1,
+           to1:to1,
+           from1:from1,
+           time1:time1   
+    },
+  };
+  };
+

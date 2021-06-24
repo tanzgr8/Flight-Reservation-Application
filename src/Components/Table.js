@@ -13,6 +13,7 @@ function Table(props) {
                   <th>{props.from}</th>
                   <th>{props.time}</th>
                   <th><button className="btn btn-danger" onClick={()=>{props.delete(props.id)}}><i className="trash alternate outline icon"></i></button></th>
+                  <th><button className="btn btn-primary" onClick={()=>{props.edit()}}><i className="pencil alternate icon"></i></button></th>
               </tr>
           </tbody>
       
