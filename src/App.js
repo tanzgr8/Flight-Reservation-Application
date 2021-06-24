@@ -11,15 +11,15 @@ function App() {
     <p class="lead">Book your Tickets Here</p>
   </div>
 </div>
-    <div className="container ct" > 
+    <div className="container" > 
       <div className="row">
         <div className="col-sm-6">
-    <Link className="btn btn-success btn-lg zz" role="button" to="/adminLogin">
+    <Link className="btn btn-success btn-lg " role="button" to="/adminLogin">
     <i className="arrow left icon "></i> Admin Login
             </Link>
             </div>
             <div className="col-sm-6">
-    <Link className="btn btn-success btn-lg zz" role="button" to="/UserLogin">
+    <Link className="btn btn-success btn-lg " role="button" to="/UserLogin">
         User Login <i className="arrow right icon "></i>
       </Link>
       </div>
